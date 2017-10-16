@@ -1,0 +1,29 @@
+<div>
+Search :<input ng-model="searchText">
+Search By Title : <input ng-model="searchText.jobTitle">
+Search By Skills Required : <input ng-model="searchText.salary">
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Title</th><th>Posted On</th><td>Salary</td>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="j in jobs | filter:searchText">
+<td><a href="" ng-click="getJobDetails(j.id)">{{j.jobTitle}}</a></td><td>{{j.postedOn | date : 'yyyy-MM-dd'}}</td>
+<td>{{j.salary}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div ng-show="showJobDetails">
+<b>Job Title:</b>{{job.jobTitle}}<br>
+<b>Job Description</b>{{job.jobDescription}}<br>
+<b>Skills Required</b>{{job.skillsRequired}}<br>
+<b>Years of Experience</b>{{job.yrsOfExp}}<br>
+<b>Salary</b>{{job.salary}}<br>
+<b>location</b>{{job.location}}<br>
+<b>Company Name</b>{{job.companyName}}<br>
+<b>Posted On</b>{{job.postedOn | date:'yyyy:MM:dd'}}
+
+</div>

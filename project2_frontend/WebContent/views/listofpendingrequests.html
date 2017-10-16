@@ -1,0 +1,19 @@
+<table class="table table-striped">
+<thead>
+<tr>
+<th>From</th>
+<th>Profile Pic</th>
+<th>Accept</th>
+<th>Deny</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="pendingRequest in pendingrequests">
+<td><a href="#/getUserDetails/{{pendingRequest.fromId}}">{{pendingRequest.fromId}}</a></td>
+<td><img src="http://localhost:8085/project2_backend/getimage/{{pendingRequest.fromId}}" height="50px" width="50px"></td>
+<td><a href="" ng-click="updatePendingRequest(pendingRequest,'A')" class="btn btn-default">Accept</a></td>
+<td><a href="" ng-click="updatePendingRequest(pendingRequest,'D')" class="btn btn-default">Deny</a></td>
+</tr>
+</tbody>
+
+</table>
